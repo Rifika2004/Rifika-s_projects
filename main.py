@@ -4,7 +4,6 @@ import datetime
 from dateparser.search import search_dates
 from mock_calendar import calendar
 
-
 app = FastAPI()
 
 class UserMessage(BaseModel):
