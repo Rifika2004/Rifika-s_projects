@@ -12,11 +12,12 @@ user_input = st.text_input("You:")
 if user_input:
     st.session_state.messages.append(("You", user_input))
     try:
-       res = requests.post("https://rifika-s_projects.onrender.com/chat", json={"text": user_input})
+    res = requests.post("https://rifika-s_projects.onrender.com/chat", json={"text": user_input})
+    st.write("🔍 Raw backend response:", res.text)  # Add this line
+    reply = res.json().get("reply", "❌ Couldn't parse backend reply.")
+except Exception as e:
+    reply = f"❌ Error: {e}"
 
-        reply = res.json().get("reply", "❌ Couldn't parse backend reply.")
-    except Exception as e:
-        reply = f"❌ Error: {e}"
     st.session_state.messages.append(("Bot", reply))
 
 for sender, msg in st.session_state.messages:
