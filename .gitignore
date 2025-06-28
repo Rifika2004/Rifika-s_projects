@@ -1,0 +1,14 @@
+# Ignore virtual environment
+streamenv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore sensitive config files
+client_secret.json
+token.json
+
+# Ignore other system junk
+.DS_Store
+Thumbs.db
