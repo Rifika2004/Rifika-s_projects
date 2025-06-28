@@ -1,13 +1,16 @@
 # mock_calendar.py
 
-booked = []
+class MockCalendar:
+    def __init__(self):
+        self.booked = []
 
-def is_free(start, end):
-    for s, e, _ in booked:
-        if max(s, start) < min(e, end):  # time overlaps
-            return False
-    return True
+    def is_free(self, start, end):
+        for s, e, _ in self.booked:
+            if max(s, start) < min(e, end):
+                return False
+        return True
 
-def book(start, end, title):
-    booked.append((start, end, title))
-."
+    def book(self, start, end, title):
+        self.booked.append((start, end, title))
+
+calendar = MockCalendar()
