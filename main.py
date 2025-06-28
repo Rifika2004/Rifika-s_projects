@@ -38,3 +38,5 @@ def chat(msg: UserMessage):
         return {"reply": f"✅ Booked on {start.strftime('%Y-%m-%d %H:%M')}"}
     else:
         return {"reply": "❌ Sorry, that slot is taken. Try another time."}
+        print("🔁 Deploying updated calendar...")
+
