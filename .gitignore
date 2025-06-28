@@ -5,10 +5,6 @@ streamenv/
 __pycache__/
 *.pyc
 
-# Ignore sensitive config files
+# Ignore sensitive files
 client_secret.json
 token.json
-
-# Ignore other system junk
-.DS_Store
-Thumbs.db
