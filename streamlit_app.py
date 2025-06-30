@@ -13,16 +13,13 @@ if user_input:
     st.session_state.messages.append(("You", user_input))
 
     try:
-        # 🔧 Send user input to backend
-        res = requests.post(
-            "https://rifika-s-projects.onrender.com/chat",
-            json={"text": user_input},
-            timeout=30
-        )
-
-        # 🔍 DEBUG: Show raw response text
-        st.write(f"🔍 Raw backend response: `{res.text}`")
-        reply = res.json().get("reply", "❌ Couldn't parse backend reply.")
+    res = requests.post(
+        "https://rifika-s-projects.onrender.com/chat",
+        json={"text": user_input},
+        timeout=30
+    )
+    st.write(f"🔍 Raw backend response: `{res.text}`")  # ✅ This line is key
+    reply = res.json().get("reply", "❌ Couldn't parse backend reply.")
 
     except Exception as e:
         reply = f"❌ Error: {e}"
