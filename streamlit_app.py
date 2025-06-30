@@ -13,7 +13,8 @@ if user_input:
     st.session_state.messages.append(("You", user_input))
 
     try:
-        res = requests.post("https://rifika-s-projects1.onrender.com/chat", json={"text": user_input})
+      res = requests.post("https://rifika-s-projects.onrender.com/chat", json={"text": user_input})
+
         st.write("🔍 Response status code:", res.status_code)
         st.write("📄 Raw text:", res.text)
         res.raise_for_status()  # This will raise HTTPError if status is 4xx or 5xx
